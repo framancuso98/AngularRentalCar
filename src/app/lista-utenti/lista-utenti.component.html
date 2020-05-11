@@ -1,0 +1,21 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th >Id</th>
+        <th >Username</th>
+        <th >Password</th>
+        <th >Nome</th>
+        <th >Cognome</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let persona of utenti">
+      <tr>
+          <td>{{persona.id}}</td>
+          <td>{{persona.username}}</td>
+          <td>{{persona.password}}</td>
+          <td>{{persona.nome}}</td>
+          <td>{{persona.cognome}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <button (click)="getAllUtenti()">premi</button>

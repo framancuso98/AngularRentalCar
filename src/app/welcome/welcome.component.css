@@ -14,8 +14,12 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
+  h1, h2 {
+    text-align: center;
+    margin-bottom: 0;
+  }
   h4 {
-    position: relative;
+    text-align: center;
   }
   .grid {
     margin: 0;
@@ -23,19 +27,22 @@
   .col-md-6 {
     width: 50%;
   }
-  .module {
+
+  button{
+    width: 95%;
     padding: 20px;
+    margin-right: initial;
     text-align: center;
     color: #eee;
     max-height: 120px;
     min-width: 120px;
-    background-color: blue;
-    border-radius: 2px;
+    background-color: #0740fc;
+    border-radius: 15px;
   }
-  .module:hover {
-    background-color: rgb(250, 115, 4);
+  button:hover{
+    background-color: rgb(245, 102, 7);
     cursor: pointer;
-    color: black;
+    color: #000000;
   }
   .grid-pad {
     padding: 10px 0;
