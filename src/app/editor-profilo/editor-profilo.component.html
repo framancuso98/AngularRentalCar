@@ -1,0 +1,30 @@
+<div class="container">
+    <form [formGroup]="formProfilo" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <label>
+                Usrename:
+                <input type="text" formControlName="username" required> 
+            </label>
+
+            <label>
+                Password:
+                <input type="text" formControlName="password">
+            </label>
+        </div>
+        <div class="row">
+            <label>
+                Nome:
+                <input type="text" formControlName="nome">
+            </label>
+
+            <label>
+                Cognome:
+                <input type="text" formControlName="cognome">
+            </label>
+        </div>
+        <div class="row">
+            <button type="submit" [disabled]="!formProfilo.valid">Submit</button>
+        </div>
+    </form>
+    <p>form : {{formProfilo.status}}</p>
+</div>

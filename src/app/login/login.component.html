@@ -1,20 +1,37 @@
 <div class="container">
-<div class="row">
-    <div class="col-md-6 offset-md-3">
-        <h1>FORM DI LOGIN</h1> 
-        <form name="loginForm" >
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text">
-            </div>
-            <div class="form-group">
-                <label for="Password">Password</label>
-                <input type="text">
-            </div>
-            <div class="formgroup">
-                <button>Login</button>
-            </div>
-        </form>
+    <div class="row ">
+        <div class="col-md-6 col-md-offset-3">
+            <h1>FORM DI LOGIN</h1>
+            <form (ngSubmit)="loginForm.valid" #loginForm="ngForm">
+                <div class="form-body">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input name="email" type="email" [(ngModel)]="utenteLogin.username" class="form-control"
+                            required email #email="ngModel" placeholder="email@email.com" />
+                        <span style="color:red" *ngIf="!email.dirty">
+                            Inserire Email!
+                        </span>
+                        <span style="color:red" *ngIf="email.invalid">
+                            Formato email non valido!!
+                        </span>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input name="password" type="password" [(ngModel)]="utenteLogin.password" class="form-control"
+                            required minlength="5" #password="ngModel" />
+                        <span style="color:red" *ngIf="password.dirty">
+                            Inserire la password!
+                        </span>
+                        <span style="color:red" *ngIf="password.invalid">
+                            Password troppo corta!!!
+                        </span>
+                    </div>
+                    <hr class="line-form">
+                    <button  type="submit"  class="btn btn-primary form-buttons" (click)="login()" [disabled]="loginForm.invalid">
+                        <i class="fa fa-floppy-o" aria-hidden="true"></i>  Login
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 </div>

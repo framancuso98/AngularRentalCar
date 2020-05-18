@@ -1,0 +1,35 @@
+<app-top-bar></app-top-bar>
+<table class="table table-hover table-dark">
+    <thead>
+      <tr>
+        <th >Id</th>
+        <th >Username</th>
+        <th >Nome</th>
+        <th >Cognome</th>
+        <th >Costruttore</th>
+        <th >Modello</th>
+        <th >Targa</th>
+        <th >Anno di Immatricolazione</th>
+        <th >Stato</th>
+        <th >Accetta</th>
+        <th >Rifiuta</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let prenotazione of prenotazioni">
+      <tr>
+          
+          <td>{{prenotazione.id}}</td>
+          <td>{{prenotazione.utente.username}}</td>
+          <td>{{prenotazione.utente.nome}}</td>
+          <td>{{prenotazione.utente.cognome}}</td>
+          <td>{{prenotazione.auto.costruttore}}</td>
+          <td>{{prenotazione.auto.modello}}</td>
+          <td>{{prenotazione.auto.targa}}</td>
+          <td>{{prenotazione.auto.anno}}</td>
+          <td>{{prenotazione.stato}}</td>
+          
+          <td><button type="button" class="btn btn-success" (click)=accetta(prenotazione) >Accetta</button></td>
+          <td><button type="button" class="btn btn-danger" (click)=rifiuta(prenotazione) >Rifiuta</button></td>
+      </tr>
+    </tbody>
+  </table>

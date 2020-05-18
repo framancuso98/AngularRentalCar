@@ -1,0 +1,53 @@
+<app-top-bar></app-top-bar>
+<div class="container">
+    <div class="row ">
+        <div class="col-md-12 col-md-offset-3">
+            <h1>AGGIUNGI UTENTE</h1>
+        </div>
+    </div>
+    <form #registra="ngForm" >
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputUsername4">Email</label>
+                <input type="email" class="form-control" id="inputUsername4" 
+                required [(ngModel)]="newUtente.username" name="username">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputPassword4">Password</label>
+                <input type="password" class="form-control" id="inputPassword4" required
+                [(ngModel)]="newUtente.password" name="password">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputNome">Nome</label>
+                <input type="text" class="form-control" id="inputNome" required [(ngModel)]="newUtente.nome"
+                name="nome">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputCognome">Cognome</label>
+                <input type="text" class="form-control" id="inputCognome" required [(ngModel)]="newUtente.cognome"
+                name="cognome">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputDataNascita">Data di nascita </label>
+                <input type="date" class="form-control" id="inputDataNascita" required [(ngModel)]="newUtente.data_nascita"
+                name="data_nascita">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="ruolo">Ruolo</label>
+                <select id="ruolo" class="form-control"[(ngModel)]="newUtente.ruolo" name="ruolo">
+                    <option   *ngFor="let ruolo of role" [ngValue]="ruolo" >{{ruolo.ruolo}}</option>
+                  </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-lg-12">
+                <button type="submit" class="btn btn-primary" (click)="addUtente()">Aggiungi</button>
+            </div>
+        </div>
+    </form>
+    
+</div>

@@ -1,0 +1,27 @@
+<app-top-bar></app-top-bar>
+<table class="table table-hover table-dark">
+    <thead>
+      <tr>
+        <th >Id</th>
+        <th >Costruttore</th>
+        <th >Modello</th>
+        <th >Targa</th>
+        <th >Anno di Immatricolazione</th>
+        <th>Categoria</th>
+        <th >Elimina</th>
+        <th >Modifica</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let auto of autos">
+      <tr>
+          <td>{{auto.id}}</td>
+          <td>{{auto.costruttore}}</td>
+          <td>{{auto.modello}}</td>
+          <td>{{auto.targa}}</td>
+          <td>{{auto.anno}}</td>
+          <td>{{auto.categoria.descrizione}}</td>
+          <td><button type="button" class="btn btn-outline-danger" (click)="elimina(auto)">Elimina</button></td>
+          <td><button type="button" class="btn btn-outline-warning" (click)="modifica(auto)">Modifica</button></td>
+      </tr>
+    </tbody>
+  </table>

@@ -1,0 +1,46 @@
+<app-top-bar></app-top-bar>
+<div class="container">
+    <div class="row ">
+        <div class="col-md-12 col-md-offset-3">
+            <h1>AGGIUNGI AUTO</h1>
+        </div>
+    </div>
+    <form #aggAuto="ngForm">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputCostruttore">Costruttore</label>
+                <input type="text" class="form-control" id="inputCostruttore" required [(ngModel)]="newAuto.costruttore"
+                    name="costruttore">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputModello">Modello</label>
+                <input type="text" class="form-control" id="inputModello" required
+                    [(ngModel)]="newAuto.modello" name="modello">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputTarga">Targa</label>
+                <input type="text" class="form-control" id="inputTarga" required [(ngModel)]="newAuto.targa"
+                    name="targa">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputAnno">Anno di Immatricolazione </label>
+                <input type="date" class="form-control" id="inputAnno" required [(ngModel)]="newAuto.anno"
+                name="anno">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="categoria">Categoria</label>
+                <select id="categoria" class="form-control" [(ngModel)]="newAuto.categoria" name="categoria">
+                    <option *ngFor="let cate of categorie" [ngValue]="cate">{{cate.descrizione}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-lg-12">
+                <button type="submit" class="btn btn-primary" (click)="addAuto()" >Aggiungi</button>
+            </div>
+        </div>
+    </form>
+</div>
