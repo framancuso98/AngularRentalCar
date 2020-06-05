@@ -17,7 +17,7 @@ export class AuthService {
   }
 
   signIn(jwtRequest: JwtRequest){
-   return this.httpClient.post<JwtResponse>("http://localhost:8080/SpringBootRentalCar/auth", jwtRequest);
+   return this.httpClient.post<JwtResponse>("http://localhost:8080/auth", jwtRequest);
   }
 
   signUp(){

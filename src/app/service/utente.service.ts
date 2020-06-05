@@ -12,7 +12,7 @@ utenti = [];
   constructor(private httpClient: HttpClient) { }
 
   getAll(): Observable<UtenteInterface[]> {
-    return this.httpClient.get<UtenteInterface[]>('http://localhost:8080/SpringBootRentalCar/utente/all');
+    return this.httpClient.get<UtenteInterface[]>('http://localhost:8080/utente/all');
   }
 
   registraUser(newUtente: UtenteInterface) {

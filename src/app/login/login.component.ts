@@ -26,7 +26,7 @@ utenteLoggato: JwtResponse;
   login(){
     this.auth.signIn(this.utenteLogin).subscribe(
       response => { 
-
+        console.log(response)
         this.utenteLoggato = response;
         sessionStorage.setItem('username', this.utenteLogin.username  );
         sessionStorage.setItem('token', this.utenteLoggato.token);

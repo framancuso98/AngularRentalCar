@@ -13,7 +13,7 @@ autos = [];
   constructor(private HttpClient: HttpClient) { }
 
   getAllAuto(): Observable<AutoModel[]> {
-    return this.HttpClient.get<AutoModel[]>('http://localhost:8080/SpringBootRentalCar/auto/all');
+    return this.HttpClient.get<AutoModel[]>('http://localhost:8080/auto/all');
   }
 
   aggiungiAuto(newAuto: AutoModel){
